@@ -3,7 +3,7 @@ import 'package:triodinamico/utils/color.dart';
 import 'package:flutter/material.dart';
 
 class ResetPassword extends StatefulWidget {
-  const ResetPassword({Key? key}) : super(key: key);
+  const ResetPassword({Key key}) : super(key: key);
 
   @override
   _ResetPasswordState createState() => _ResetPasswordState();

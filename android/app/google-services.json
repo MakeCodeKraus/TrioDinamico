@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "493720425631",
+    "project_id": "triodinamico-d1310",
+    "storage_bucket": "triodinamico-d1310.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493720425631:android:e638fa298c7ccca84e7eaa",
+        "android_client_info": {
+          "package_name": "com.example.triodinamico"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "493720425631-s0varqscfj7vuup4t824jn95q03p2rf1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIwNLIDMu7COfF7PtBxgo2Z5ttwFDh3O0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "493720425631-s0varqscfj7vuup4t824jn95q03p2rf1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
