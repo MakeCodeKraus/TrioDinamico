@@ -1,15 +1,17 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:triodinamico/widgets/reusable.dart';
 import 'package:triodinamico/utils/color.dart';
 import 'package:flutter/material.dart';
+import 'package:triodinamico/app/app.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({Key key}) : super(key: key);
+class SignUp extends StatefulWidget {
+  const SignUp({Key key}) : super(key: key);
 
   @override
-  _SignUpScreenState createState() => _SignUpScreenState();
+  _SignUpState createState() => _SignUpState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _SignUpState extends State<SignUp> {
   TextEditingController _passwordTextController = TextEditingController();
   TextEditingController _emailTextController = TextEditingController();
   TextEditingController _userNameTextController = TextEditingController();
@@ -57,8 +59,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                signInSignUpButton(context, false, () {
-                  Navigator.pushNamed(context, "tabs");
+                firebaseUIButton(context, "Sign Up", () {
+                  FirebaseAuth.instance
+                      .createUserWithEmailAndPassword(
+                          email: _emailTextController.text,
+                          password: _passwordTextController.text)
+                      .then((value) {
+                    print("Created New Account");
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => App()));
+                  }).onError((error, stackTrace) {
+                    print("Error ${error.toString()}");
+                  });
                 })
               ],
             ),

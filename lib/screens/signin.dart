@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:triodinamico/app/app.dart';
 import 'package:triodinamico/widgets/reusable.dart';
 import 'package:triodinamico/screens/resetPassword.dart';
 import 'package:triodinamico/screens/signup.dart';
@@ -8,10 +10,10 @@ class SignIn extends StatefulWidget {
   const SignIn({Key key}) : super(key: key);
 
   @override
-  _SignInScreenState createState() => _SignInScreenState();
+  _SignInState createState() => _SignInState();
 }
 
-class _SignInScreenState extends State<SignIn> {
+class _SignInState extends State<SignIn> {
   TextEditingController _passwordTextController = TextEditingController();
   TextEditingController _emailTextController = TextEditingController();
   @override
@@ -46,8 +48,18 @@ class _SignInScreenState extends State<SignIn> {
                 const SizedBox(
                   height: 5,
                 ),
-                signInSignUpButton(context, true, () {
-                  Navigator.pushNamed(context, "tabs");
+                forgetPassword(context),
+                firebaseUIButton(context, "Sign In", () {
+                  FirebaseAuth.instance
+                      .signInWithEmailAndPassword(
+                          email: _emailTextController.text,
+                          password: _passwordTextController.text)
+                      .then((value) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => App()));
+                  }).onError((error, stackTrace) {
+                    print("Error ${error.toString()}");
+                  });
                 }),
                 signUpOption()
               ],
@@ -66,8 +78,8 @@ class _SignInScreenState extends State<SignIn> {
             style: TextStyle(color: Colors.white70)),
         GestureDetector(
           onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => SignUpScreen()));
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => SignUp()));
           },
           child: const Text(
             " Sign Up",
