@@ -1,6 +1,8 @@
+import 'package:triodinamico/widgets/container.dart';
 import 'package:triodinamico/widgets/reusable.dart';
 import 'package:triodinamico/utils/color.dart';
 import 'package:flutter/material.dart';
+import 'package:triodinamico/screens/signin.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key key}) : super(key: key);
@@ -36,7 +38,9 @@ class _WelcomePage extends State<WelcomePage> {
                   height: 30,
                 ),
                 signInSignUpButton(context, true, () {
-                  Navigator.pushNamed(context, "login");
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return SignIn();
+                  }));
                 }),
               ],
             ),
