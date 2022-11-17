@@ -9,54 +9,54 @@ class Home extends StatelessWidget {
       'price': '96.00',
       'rate': '4.9',
       'clients': '200',
-      'image': 'images/plate-001.png'
+      'image': 'assets/images/plate-001.png'
     },
     {
       'name': 'Salmon',
       'price': '40.50',
       'rate': '4.5',
       'clients': '168',
-      'image': 'images/plate-002.png'
+      'image': 'assets/images/plate-002.png'
     },
     {
       'name': 'Rice and meat',
       'price': '130.00',
       'rate': '4.8',
       'clients': '150',
-      'image': 'images/plate-003.png'
+      'image': 'assets/images/plate-003.png'
     },
     {
       'name': 'Vegan food',
       'price': '400.00',
       'rate': '4.2',
       'clients': '150',
-      'image': 'images/plate-007.png'
+      'image': 'assets/images/plate-007.png'
     },
     {
       'name': 'Rich food',
       'price': '1000.00',
       'rate': '4.6',
       'clients': '10',
-      'image': 'images/plate-006.png'
+      'image': 'assets/images/plate-006.png'
     }
   ];
 
   final List<Map<String, String>> foodOptions = [
     {
       'name': 'Proteins',
-      'image': 'images/Icon-001.png',
+      'image': 'assets/images/Icon-001.png',
     },
     {
       'name': 'Burger',
-      'image': 'images/Icon-002.png',
+      'image': 'assets/images/Icon-002.png',
     },
     {
       'name': 'Fastfood',
-      'image': 'images/Icon-003.png',
+      'image': 'assets/images/Icon-003.png',
     },
     {
       'name': 'Salads',
-      'image': 'images/Icon-004.png',
+      'image': 'assets/images/Icon-004.png',
     }
   ];
 
@@ -232,7 +232,7 @@ class Home extends StatelessWidget {
                   'price': '26.00',
                   'rate': '5.0',
                   'clients': '150',
-                  'image': 'images/plate-005.jpg'
+                  'image': 'assets/images/plate-005.jpg'
                 };
                 Navigator.pushNamed(context, 'details', arguments: {
                   'product': localProduct,
@@ -262,7 +262,8 @@ class Home extends StatelessWidget {
                                 Radius.circular(5.0),
                               ),
                               image: DecorationImage(
-                                image: AssetImage('images/plate-005.jpg'),
+                                image:
+                                    AssetImage('assets/images/plate-005.jpg'),
                               ),
                             ),
                           ),

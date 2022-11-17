@@ -28,7 +28,7 @@ class App extends StatelessWidget {
             indicatorColor: Colors.transparent,
             labelColor: theme.primaryColor,
             unselectedLabelColor: Colors.black54,
-            tabs: <Widget>[
+            tabs: const <Widget>[
               Tab(
                 icon: Icon(Icons.home, size: 28),
                 text: 'Home',

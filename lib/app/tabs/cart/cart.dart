@@ -16,20 +16,20 @@ class _CartState extends State<Cart> with TickerProviderStateMixin {
       'price': '130.00',
       'rate': '4.8',
       'clients': '150',
-      'image': 'images/plate-003.png'
+      'image': 'assets/images/plate-003.png'
     },
     {
       'name': 'Vegan food',
       'price': '400.00',
       'rate': '4.2',
       'clients': '150',
-      'image': 'images/plate-007.png'
+      'image': 'assets/images/plate-007.png'
     },
   ];
 
   @override
   void initState() {
-    this._tabController = TabController(
+    _tabController = TabController(
       initialIndex: 0,
       length: 3,
       vsync: this,
@@ -81,14 +81,14 @@ class _CartState extends State<Cart> with TickerProviderStateMixin {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
                                 Text(food['name']),
-                                Icon(Icons.delete_outline)
+                                const Icon(Icons.delete_outline)
                               ],
                             ),
                             Text('\$${food['price']}'),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: <Widget>[
-                                Icon(Icons.remove),
+                                const Icon(Icons.remove),
                                 Container(
                                   color: primaryColor,
                                   margin: const EdgeInsets.symmetric(
@@ -98,7 +98,7 @@ class _CartState extends State<Cart> with TickerProviderStateMixin {
                                     vertical: 3.0,
                                     horizontal: 12.0,
                                   ),
-                                  child: Text(
+                                  child: const Text(
                                     'Add To 2',
                                     style: TextStyle(
                                       color: Colors.white,
@@ -127,7 +127,7 @@ class _CartState extends State<Cart> with TickerProviderStateMixin {
 
   Widget renderTracking() {
     return ListView.builder(
-      itemCount: this.foods.length,
+      itemCount: foods.length,
       itemBuilder: (BuildContext context, int index) {
         Map<String, String> food = foods[index];
         Color primaryColor = Theme.of(context).primaryColor;
@@ -181,8 +181,8 @@ class _CartState extends State<Cart> with TickerProviderStateMixin {
                               ),
                             ),
                             Text('\$${food['price']}'),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
+                            const Padding(
+                              padding: EdgeInsets.only(top: 8.0),
                               child: Text(
                                 'View Detail',
                                 textAlign: TextAlign.end,
@@ -204,7 +204,7 @@ class _CartState extends State<Cart> with TickerProviderStateMixin {
 
   Widget renderDoneOrder() {
     return ListView.builder(
-      itemCount: this.foods.length,
+      itemCount: foods.length,
       itemBuilder: (BuildContext context, int index) {
         Map<String, String> food = foods[index];
         Color primaryColor = Theme.of(context).primaryColor;
@@ -295,12 +295,12 @@ class _CartState extends State<Cart> with TickerProviderStateMixin {
               top: 10.0,
             ),
             child: TabBar(
-              controller: this._tabController,
+              controller: _tabController,
               indicatorColor: theme.primaryColor,
               indicatorSize: TabBarIndicatorSize.label,
               labelColor: Colors.black87,
               unselectedLabelColor: Colors.black87,
-              tabs: <Widget>[
+              tabs: const <Widget>[
                 Tab(text: 'Add Food'),
                 Tab(text: 'Tracking Order'),
                 Tab(text: 'Done Order'),
@@ -327,7 +327,7 @@ class _CartState extends State<Cart> with TickerProviderStateMixin {
                           borderRadius: BorderRadius.circular(10.0),
                           color: theme.primaryColor,
                         ),
-                        child: Text(
+                        child: const Text(
                           'CHECKOUT',
                           style: TextStyle(
                             color: Colors.white,
@@ -338,10 +338,10 @@ class _CartState extends State<Cart> with TickerProviderStateMixin {
                   ),
                   Column(
                     children: <Widget>[
-                      Container(
+                      SizedBox(
                         height: size.height * 0.20 * this.foods.length,
                         width: size.width,
-                        child: this.renderTracking(),
+                        child: renderTracking(),
                       ),
                       Container(
                         margin: const EdgeInsets.symmetric(horizontal: 65.0),
@@ -354,9 +354,9 @@ class _CartState extends State<Cart> with TickerProviderStateMixin {
                           color: theme.primaryColor,
                         ),
                         child: Row(
-                          children: <Widget>[
+                          children: const <Widget>[
                             Padding(
-                              padding: const EdgeInsets.only(right: 8.0),
+                              padding: EdgeInsets.only(right: 8.0),
                               child: Icon(
                                 Icons.location_searching,
                                 size: 20.0,
@@ -373,7 +373,7 @@ class _CartState extends State<Cart> with TickerProviderStateMixin {
                       ),
                     ],
                   ),
-                  this.renderDoneOrder(),
+                  renderDoneOrder(),
                 ],
               ),
             ),

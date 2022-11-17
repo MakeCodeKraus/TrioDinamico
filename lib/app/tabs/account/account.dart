@@ -17,21 +17,21 @@ class _AccountState extends State<Account> with TickerProviderStateMixin {
       'price': '96.00',
       'rate': '4.9',
       'clients': '200',
-      'image': 'images/plate-001.png'
+      'image': 'assets/images/plate-001.png'
     },
     {
       'name': 'Salmon',
       'price': '40.50',
       'rate': '4.5',
       'clients': '168',
-      'image': 'images/plate-002.png'
+      'image': 'assets/images/plate-002.png'
     },
     {
       'name': 'Rice and meat',
       'price': '130.00',
       'rate': '4.8',
       'clients': '150',
-      'image': 'images/plate-003.png'
+      'image': 'assets/images/plate-003.png'
     }
   ];
 
