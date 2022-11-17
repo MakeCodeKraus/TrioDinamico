@@ -20,7 +20,7 @@ class Details extends StatelessWidget {
               height: size.width,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage(product['image']),
+                  image: AssetImage(product['assets/image']),
                 ),
               ),
             ),
