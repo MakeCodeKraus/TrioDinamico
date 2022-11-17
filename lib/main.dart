@@ -35,9 +35,9 @@ class MyApp extends StatelessWidget {
       title: 'Trio Dinámico App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.indigo,
-        brightness: Brightness.dark,
-      ),
+          primarySwatch: Colors.indigo,
+          brightness: Brightness.dark,
+          scaffoldBackgroundColor: Colors.white),
       home: const WelcomePage(),
     );
   }
