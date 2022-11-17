@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-//import 'package:triodinamico/app/tabs/account/account.dart';
-//import 'package:triodinamico/app/tabs/cart/cart.dart';
-//import 'package:triodinamico/app/tabs/home/home.dart';
-//import 'package:triodinamico/app/tabs/near_by/near_by.dart';
+import 'package:triodinamico/app/tabs/account/account.dart';
+import 'package:triodinamico/app/tabs/cart/cart.dart';
+import 'package:triodinamico/app/tabs/home/home.dart';
+import 'package:triodinamico/app/tabs/near_by/near_by.dart';
 
 class App extends StatelessWidget {
   @override
@@ -14,10 +14,10 @@ class App extends StatelessWidget {
       child: Scaffold(
         body: TabBarView(
           children: <Widget>[
-            //Home(),
-            //NearBy(),
-            //Cart(),
-            //Account(),
+            Home(),
+            NearBy(),
+            Cart(),
+            Account(),
           ],
         ),
         bottomNavigationBar: Material(

@@ -57,7 +57,6 @@ class _SignInState extends State<SignIn> {
                       .then((value) {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => App()));
-                    //Navigator.pushNamed(context, "tabs"); mostraba el fondo blanco
                   }).onError((error, stackTrace) {
                     print("Error ${error.toString()}");
                   });

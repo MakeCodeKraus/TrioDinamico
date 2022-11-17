@@ -30,3 +30,9 @@ flutter:
 
   assets:
     - assets/images/
+
+  fonts:
+    - family: Cera Pro
+      fonts:
+        - asset: fonts/Cera-Pro.otf
+   

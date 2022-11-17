@@ -35,6 +35,8 @@ class MyApp extends StatelessWidget {
       title: 'Trio Dinámico App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+          fontFamily: "Cera Pro",
+          primaryColor: Color(0xFFE85852),
           primarySwatch: Colors.indigo,
           brightness: Brightness.dark,
           scaffoldBackgroundColor: Colors.white),
