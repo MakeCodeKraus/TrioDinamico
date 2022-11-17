@@ -14,7 +14,7 @@ class App extends StatelessWidget {
       child: Scaffold(
         body: TabBarView(
           children: <Widget>[
-            TabsPage(),
+            Home(),
             NearBy(),
             Cart(),
             Account(),
