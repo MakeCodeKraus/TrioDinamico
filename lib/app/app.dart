@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:triodinamico/app/tabs/account/account.dart';
 import 'package:triodinamico/app/tabs/cart/cart.dart';
 import 'package:triodinamico/app/tabs/home/home.dart';
-import 'package:triodinamico/app/tabs/near_by/near_by.dart';
+import 'package:triodinamico/app/tabs/menu/menu.dart';
 
 class App extends StatelessWidget {
   @override
@@ -15,7 +15,7 @@ class App extends StatelessWidget {
         body: TabBarView(
           children: <Widget>[
             Home(),
-            NearBy(),
+            Menu(),
             Cart(),
             Account(),
           ],
@@ -28,14 +28,14 @@ class App extends StatelessWidget {
             indicatorColor: Colors.transparent,
             labelColor: theme.primaryColor,
             unselectedLabelColor: Colors.black54,
-            tabs: const <Widget>[
+            tabs: <Widget>[
               Tab(
                 icon: Icon(Icons.home, size: 28),
                 text: 'Home',
               ),
               Tab(
-                icon: Icon(Icons.gps_not_fixed, size: 28),
-                text: 'Near By',
+                icon: Icon(Icons.menu_book, size: 28),
+                text: 'Menu',
               ),
               Tab(
                 icon: Icon(Icons.card_travel, size: 28),
@@ -52,3 +52,4 @@ class App extends StatelessWidget {
     );
   }
 }
+

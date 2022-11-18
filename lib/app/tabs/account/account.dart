@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:triodinamico/app/components/food_card.dart';
 
 class Account extends StatefulWidget {
-  const Account({Key key}) : super(key: key);
-
   @override
   _AccountState createState() => _AccountState();
 }
@@ -17,21 +15,21 @@ class _AccountState extends State<Account> with TickerProviderStateMixin {
       'price': '96.00',
       'rate': '4.9',
       'clients': '200',
-      'image': 'assets/images/plate-001.png'
+      'image': 'images/plate-001.png'
     },
     {
       'name': 'Salmon',
       'price': '40.50',
       'rate': '4.5',
       'clients': '168',
-      'image': 'assets/images/plate-002.png'
+      'image': 'images/plate-002.png'
     },
     {
       'name': 'Rice and meat',
       'price': '130.00',
       'rate': '4.8',
       'clients': '150',
-      'image': 'assets/images/plate-003.png'
+      'image': 'images/plate-003.png'
     }
   ];
 
@@ -55,7 +53,7 @@ class _AccountState extends State<Account> with TickerProviderStateMixin {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          const Text(
+          Text(
             'Profile',
             style: TextStyle(color: Colors.black, fontSize: 18.0),
             textAlign: TextAlign.center,
@@ -65,7 +63,7 @@ class _AccountState extends State<Account> with TickerProviderStateMixin {
               top: 30.0,
               bottom: 15.0,
             ),
-            child: const CircleAvatar(
+            child: CircleAvatar(
               backgroundColor: Colors.blueGrey,
               radius: 35.0,
               child: Icon(
@@ -75,7 +73,7 @@ class _AccountState extends State<Account> with TickerProviderStateMixin {
               ),
             ),
           ),
-          const Text(
+          Text(
             'Fernando Moraes',
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -87,9 +85,9 @@ class _AccountState extends State<Account> with TickerProviderStateMixin {
             padding: const EdgeInsets.all(5.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
+              children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 5.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
                   child: Icon(
                     Icons.location_on,
                     size: 16.0,
@@ -178,9 +176,9 @@ class _AccountState extends State<Account> with TickerProviderStateMixin {
               indicatorColor: theme.primaryColor,
               indicatorSize: TabBarIndicatorSize.label,
               labelColor: theme.primaryColor,
-              labelStyle: const TextStyle(fontSize: 20.0),
+              labelStyle: TextStyle(fontSize: 20.0),
               unselectedLabelColor: Colors.black,
-              tabs: const <Widget>[
+              tabs: <Widget>[
                 Tab(text: 'Your Favorite'),
                 Tab(text: 'Account Setting'),
               ],
@@ -188,25 +186,27 @@ class _AccountState extends State<Account> with TickerProviderStateMixin {
           ),
           Expanded(
               child: TabBarView(
-            controller: _tabController,
+            controller: this._tabController,
             children: <Widget>[
-              GridView.count(
-                crossAxisCount: 2,
-                childAspectRatio: ((size.width / 2) / 230),
-                children: this.favoriteFoods.map((product) {
-                  return Container(
-                    margin: const EdgeInsets.only(top: 10.0),
-                    child: FoodCard(
-                      width: size.width,
-                      primaryColor: theme.primaryColor,
-                      productName: product['name'],
-                      productPrice: product['price'],
-                      productUrl: product['image'],
-                      productClients: product['clients'],
-                      productRate: product['rate'],
-                    ),
-                  );
-                }).toList(),
+              Container(
+                child: GridView.count(
+                  crossAxisCount: 2,
+                  childAspectRatio: ((size.width / 2) / 230),
+                  children: this.favoriteFoods.map((product) {
+                    return Container(
+                      margin: const EdgeInsets.only(top: 10.0),
+                      child: FoodCard(
+                        width: size.width,
+                        primaryColor: theme.primaryColor,
+                        productName: product['name'],
+                        productPrice: product['price'],
+                        productUrl: product['image'],
+                        productClients: product['clients'],
+                        productRate: product['rate'],
+                      ),
+                    );
+                  }).toList(),
+                ),
               ),
               Container(
                 margin: const EdgeInsets.only(top: 10.0),
@@ -232,8 +232,8 @@ class _AccountState extends State<Account> with TickerProviderStateMixin {
                             size: 25.0,
                             color: theme.primaryColor,
                           ),
-                          const Padding(
-                            padding: EdgeInsets.symmetric(
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
                               horizontal: 15.0,
                             ),
                             child: Text(
@@ -261,8 +261,8 @@ class _AccountState extends State<Account> with TickerProviderStateMixin {
                             size: 25.0,
                             color: theme.primaryColor,
                           ),
-                          const Padding(
-                            padding: EdgeInsets.symmetric(
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
                               horizontal: 15.0,
                             ),
                             child: Text(
@@ -292,8 +292,8 @@ class _AccountState extends State<Account> with TickerProviderStateMixin {
                             size: 25.0,
                             color: theme.primaryColor,
                           ),
-                          const Padding(
-                            padding: EdgeInsets.symmetric(
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
                               horizontal: 15.0,
                             ),
                             child: Text(
@@ -316,7 +316,7 @@ class _AccountState extends State<Account> with TickerProviderStateMixin {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          const Text(
+                          Text(
                             'Location Tracking',
                             style:
                                 TextStyle(color: Colors.black, fontSize: 18.0),
@@ -324,17 +324,16 @@ class _AccountState extends State<Account> with TickerProviderStateMixin {
                           Switch(
                             onChanged: (bool value) {
                               setState(() {
-                                switchValue = value;
+                                this.switchValue = value;
                               });
                             },
-                            value: switchValue,
+                            value: this.switchValue,
                             activeColor: theme.primaryColor,
                           ),
                         ],
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsets.only(top: 65.0),
                       padding: const EdgeInsets.symmetric(
                         vertical: 10.0,
                       ),
@@ -352,8 +351,8 @@ class _AccountState extends State<Account> with TickerProviderStateMixin {
                             size: 25.0,
                             color: theme.primaryColor,
                           ),
-                          const Padding(
-                            padding: EdgeInsets.symmetric(
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
                               horizontal: 15.0,
                             ),
                             child: Text(
@@ -375,3 +374,4 @@ class _AccountState extends State<Account> with TickerProviderStateMixin {
     );
   }
 }
+
