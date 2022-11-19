@@ -17,7 +17,7 @@ class App extends StatelessWidget {
             Home(),
             Menu(),
             Cart(),
-            //Account(),
+            Account(),
           ],
         ),
         bottomNavigationBar: Material(
