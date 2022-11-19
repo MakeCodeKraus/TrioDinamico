@@ -16,7 +16,7 @@ class App extends StatelessWidget {
           children: <Widget>[
             Home(),
             Menu(),
-            //Cart(),
+            Cart(),
             //Account(),
           ],
         ),
